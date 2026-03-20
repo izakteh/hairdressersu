@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hairdresser Su — Hair Salon in Melbourne CBD</title>
+  <meta name="description" content="Hairdresser Su is a Korean hair salon in Melbourne CBD specialising in perms, colour, balayage, and Shiseido straightening. Book your appointment today.">
+  <meta name="theme-color" content="#F5F0EB">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✂️</text></svg>">
+  <link rel="canonical" href="[CANONICAL_URL]">
+  <meta property="og:title" content="Hairdresser Su — Hair Salon in Melbourne CBD">
+  <meta property="og:description" content="Korean hairdresser in Melbourne CBD. Specialising in perms, colour, balayage, keratin treatments and more.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="[CANONICAL_URL]">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --cream: #F5F0EB;
+      --gold: #8B6914;
+      --gold-light: #B8942B;
+      --text: #5C4A1E;
+      --text-light: #8A7656;
+      --white: #FFFDF9;
+      --font-serif: 'Cormorant Garamond', 'Georgia', serif;
+      --font-sans: 'DM Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--cream);
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Blob Decoration ── */
+    .blob-accent {
+      position: absolute;
+      pointer-events: none;
+      opacity: 0.18;
+    }
+
+    /* ── Header / Hero ── */
+    header {
+      position: relative;
+      text-align: center;
+      padding: 3.5rem 1.5rem 3rem;
+      overflow: hidden;
+    }
+
+    header .blob-accent {
+      width: 280px;
+      height: 320px;
+      top: -40px;
+      right: -60px;
+    }
+
+    .site-name {
+      font-family: var(--font-serif);
+      font-size: 2.8rem;
+      font-weight: 400;
+      color: var(--gold);
+      letter-spacing: 0.01em;
+      line-height: 1.15;
+    }
+
+    .site-name em {
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .tagline {
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin-top: 0.5rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .cta {
+      display: inline-block;
+      margin-top: 1.8rem;
+      padding: 0.85rem 2.4rem;
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--gold);
+      border: none;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .cta:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+    /* ── Nav (minimal) ── */
+    nav {
+      text-align: center;
+      padding: 0 1.5rem 1.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.8rem;
+    }
+
+    nav a {
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    nav a:hover { color: var(--gold); }
+
+    /* ── Divider ── */
+    .divider {
+      width: 60px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.3;
+      margin: 0 auto;
+    }
+
+    /* ── Price List ── */
+    .prices {
+      position: relative;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 3rem;
+    }
+
+    .prices .blob-accent {
+      width: 220px;
+      height: 260px;
+      bottom: 60px;
+      left: -80px;
+    }
+
+    .prices-heading {
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      color: var(--gold);
+      text-align: center;
+      margin-bottom: 0.3rem;
+    }
+
+    .prices-heading em { font-style: italic; }
+
+    .price-legend {
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--text-light);
+      letter-spacing: 0.04em;
+      margin-bottom: 2.2rem;
+    }
+
+    .price-legend span {
+      display: inline-block;
+      margin: 0 0.35rem;
+    }
+
+    .price-legend abbr {
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .price-category {
+      margin-bottom: 2rem;
+    }
+
+    .price-category h3 {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+      letter-spacing: 0.02em;
+    }
+
+    .price-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(139, 105, 20, 0.08);
+    }
+
+    .price-item:last-child { border-bottom: none; }
+
+    .price-label {
+      font-size: 0.88rem;
+      color: var(--text);
+      flex-shrink: 0;
+      padding-right: 1rem;
+    }
+
+    .price-values {
+      font-size: 0.88rem;
+      color: var(--text-light);
+      text-align: right;
+      white-space: nowrap;
+      letter-spacing: 0.01em;
+    }
+
+    .price-values .tier {
+      display: inline-block;
+      min-width: 2.8rem;
+      text-align: right;
+    }
+
+    .price-values .sep {
+      color: rgba(139, 105, 20, 0.25);
+      margin: 0 0.15rem;
+    }
+
+    .price-single {
+      font-size: 0.88rem;
+      color: var(--text-light);
+    }
+
+    /* ── Location ── */
+    .location {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 3rem;
+      text-align: center;
+    }
+
+    .location h2 {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .location address {
+      font-style: normal;
+      font-size: 0.9rem;
+      color: var(--text-light);
+      line-height: 1.7;
+      margin-bottom: 1.2rem;
+    }
+
+    .map-link {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(139, 105, 20, 0.3);
+      padding-bottom: 2px;
+      transition: border-color 0.2s;
+    }
+
+    .map-link:hover { border-color: var(--gold); }
+
+    .map-container {
+      margin-top: 1.5rem;
+      border-radius: 12px;
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+      background: #EAE4DC;
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 2.5rem 1.5rem 3rem;
+      border-top: 1px solid rgba(139, 105, 20, 0.1);
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .footer-links a {
+      color: var(--text-light);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--gold); }
+
+    .footer-links svg { width: 22px; height: 22px; fill: currentColor; }
+
+    .footer-cta {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-decoration: none;
+      border: 1px solid var(--gold);
+      border-radius: 50px;
+      padding: 0.65rem 2rem;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .footer-cta:hover { background: var(--gold); color: var(--white); }
+
+    .copyright {
+      margin-top: 1.5rem;
+      font-size: 0.72rem;
+      color: var(--text-light);
+      opacity: 0.6;
+    }
+
+    /* ── Responsive ── */
+    @media (min-width: 640px) {
+      .site-name { font-size: 3.5rem; }
+      .prices { padding: 3rem 2rem 3.5rem; }
+      .price-item { padding: 0.6rem 0; }
+      header { padding: 5rem 2rem 4rem; }
+    }
+
+    @media (min-width: 960px) {
+      header { padding: 6rem 2rem 5rem; }
+      header .blob-accent { width: 360px; height: 400px; right: 10%; top: -60px; }
+      .prices .blob-accent { width: 300px; left: -120px; }
+    }
+  </style>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HairSalon",
+    "name": "Hairdresser Su",
+    "description": "Korean hair salon in Melbourne CBD specialising in perms, colour, balayage, keratin treatments and Shiseido straightening.",
+    "url": "[CANONICAL_URL]",
+    "telephone": "[PHONE_NUMBER]",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "[STREET_ADDRESS]",
+      "addressLocality": "Melbourne",
+      "addressRegion": "VIC",
+      "postalCode": "[POSTCODE]",
+      "addressCountry": "AU"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "[LATITUDE]",
+      "longitude": "[LONGITUDE]"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "[WEEKDAY_OPEN]",
+        "closes": "[WEEKDAY_CLOSE]"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "[SATURDAY_OPEN]",
+        "closes": "[SATURDAY_CLOSE]"
+      }
+    ],
+    "image": "[IMAGE_URL]",
+    "priceRange": "$$",
+    "sameAs": ["[INSTAGRAM_URL]"]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ── Hero ── -->
+  <header>
+    <svg class="blob-accent" viewBox="0 0 300 340" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M180 30c60 15 100 70 95 140s-55 130-120 145S40 300 25 230s-10-120 30-160S120 15 180 30z" stroke="#8B6914" stroke-width="1.2" fill="none"/>
+    </svg>
+    <h1 class="site-name">Hairdresser <em>Su</em></h1>
+    <p class="tagline">Hair salon in Melbourne CBD</p>
+    <a href="[TIMELY_URL]" class="cta" rel="noopener">Book Now</a>
+  </header>
+
+  <nav aria-label="Page navigation">
+    <a href="#prices">Prices</a>
+    <a href="#location">Location</a>
+  </nav>
+
+  <div class="divider"></div>
+
+  <!-- ── Price List ── -->
+  <section class="prices" id="prices">
+    <svg class="blob-accent" viewBox="0 0 240 280" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M140 20c50 12 85 60 80 120s-45 110-100 125S15 255 10 195s-5-100 30-135S90 8 140 20z" stroke="#8B6914" stroke-width="1" fill="none"/>
+    </svg>
+
+    <h2 class="prices-heading">Price <em>List</em></h2>
+    <p class="price-legend">
+      Multiple prices listed as
+      <span><abbr title="Short">S</abbr></span>
+      <span><abbr title="Medium">M</abbr></span>
+      <span><abbr title="Long">L</abbr></span>
+      <span><abbr title="Extra Long">XL</abbr></span>
+      by hair length
+    </p>
+
+    <!-- Hair Cut -->
+    <div class="price-category">
+      <h3>Hair Cut</h3>
+      <div class="price-item">
+        <span class="price-label">Women's Haircut</span>
+        <span class="price-values">
+          <span class="tier">$85</span><span class="sep">/</span><span class="tier">$95</span><span class="sep">/</span><span class="tier">$105</span><span class="sep">/</span><span class="tier">$115</span>
+        </span>
+      </div>
+      <div class="price-item">
+        <span class="price-label">Men's Haircut</span>
+        <span class="price-single">$60</span>
+      </div>
+    </div>
+
+    <!-- Colour -->
+    <div class="price-category">
+      <h3>Colour</h3>
+      <div class="price-item">
+        <span class="price-label">Regrowth</span>
+        <span class="price-single">$120</span>
+      </div>
+      <div class="price-item">
+        <span class="price-label">Regrowth Bleach</span>
+        <span class="price-single">$200</span>
+      </div>
+      <div class="price-item">
+        <span class="price-label">Full Colour</span>
+        <span class="price-values">
+          <span class="tier">$200</span><span class="sep">/</span><span class="tier">$240</span><span class="sep">/</span><span class="tier">$270</span><span class="sep">/</span><span class="tier">$300</span>
+        </span>
+      </div>
+      <div class="price-item">
+        <span class="price-label">Balayage Extra</span>
+        <span class="price-single">$120</span>
+      </div>
+      <div class="price-item">
+        <span class="price-label">Highlights Extra</span>
+        <span class="price-single">$150</span>
+      </div>
+      <div class="price-item">
+        <span class="price-label">Full Bleach Extra</span>
+        <span class="price-single">$70</span>
+      </div>
+    </div>
+
+    <!-- Perm -->
+    <div class="price-category">
+      <h3>Perm</h3>
+      <div class="price-item">
+        <span class="price-label">Men's Perm</span>
+        <span class="price-values">
+          <span class="tier">$170</span><span class="sep">/</span><span class="tier">$200</span>
+        </span>
+      </div>
+      <div class="price-item">
+        <span class="price-label">Down Perm</span>
+        <span class="price-single">$50</span>
+      </div>
+      <div class="price-item">
+        <span class="price-label">Cold Perm</span>
+        <span class="price-values">
+          <span class="tier">$230</span><span class="sep">/</span><span class="tier">$260</span><span class="sep">/</span><span class="tier">$290</span><span class="sep">/</span><span class="tier">$310</span>
+        </span>
+      </div>
+      <div class="price-item">
+        <span class="price-label">Digital Perm</span>
+        <span class="price-values">
+          <span class="tier">$290</span><span class="sep">/</span><span class="tier">$330</span><span class="sep">/</span><span class="tier">$380</span><span class="sep">/</span><span class="tier">$400</span>
+        </span>
+      </div>
+      <div class="price-item">
+        <span class="price-label">Hippie Perm</span>
+        <span class="price-values">
+          <span class="tier">$300</span><span class="sep">/</span><span class="tier">$350</span><span class="sep">/</span><span class="tier">$400</span><span class="sep">/</span><span class="tier">$450</span>
+        </span>
+      </div>
+    </div>
+
+    <!-- Permanent Straightening -->
+    <div class="price-category">
+      <h3>Permanent Straightening</h3>
+      <div class="price-item">
+        <span class="price-label">Shiseido Straightening</span>
+        <span class="price-values">
+          <span class="tier">$300</span><span class="sep">/</span><span class="tier">$350</span><span class="sep">/</span><span class="tier">$400</span><span class="sep">/</span><span class="tier">$450</span>
+        </span>
+      </div>
+    </div>
+
+    <!-- Treatment -->
+    <div class="price-category">
+      <h3>Treatment</h3>
+      <div class="price-item">
+        <span class="price-label">Keratin</span>
+        <span class="price-values">
+          <span class="tier">$250</span><span class="sep">/</span><span class="tier">$300</span><span class="sep">/</span><span class="tier">$350</span><span class="sep">/</span><span class="tier">$400</span>
+        </span>
+      </div>
+      <div class="price-item">
+        <span class="price-label">Milbon</span>
+        <span class="price-single">$150</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ── Location ── -->
+  <section class="location" id="location">
+    <h2>Visit</h2>
+    <address>[FULL_ADDRESS]</address>
+    <a href="https://www.google.com/maps/search/?api=1&query=[FULL_ADDRESS_ENCODED]" class="map-link" target="_blank" rel="noopener">Open in Google Maps &rarr;</a>
+    <div class="map-container" id="map-container">
+      <noscript>
+        <a href="https://www.google.com/maps/search/?api=1&query=[FULL_ADDRESS_ENCODED]">View on Google Maps</a>
+      </noscript>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <div class="footer-links">
+      <a href="[INSTAGRAM_URL]" target="_blank" rel="noopener" aria-label="Follow on Instagram">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+        </svg>
+      </a>
+    </div>
+    <a href="[TIMELY_URL]" class="footer-cta" rel="noopener">Book Now</a>
+    <p class="copyright">&copy; 2026 Hairdresser Su</p>
+  </footer>
+
+  <!-- Lazy-load map -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var mapContainer = document.getElementById('map-container');
+      if (!mapContainer) return;
+      var observer = new IntersectionObserver(function (entries) {
+        if (entries[0].isIntersecting) {
+          var iframe = document.createElement('iframe');
+          iframe.src = 'https://www.google.com/maps/embed/v1/place?key=[GOOGLE_MAPS_EMBED_API_KEY]&q=[FULL_ADDRESS_ENCODED]';
+          iframe.setAttribute('loading', 'lazy');
+          iframe.setAttribute('allowfullscreen', '');
+          iframe.setAttribute('referrerpolicy', 'no-referrer-when-downgrade');
+          iframe.setAttribute('title', 'Hairdresser Su location on Google Maps');
+          mapContainer.appendChild(iframe);
+          observer.disconnect();
+        }
+      }, { rootMargin: '200px' });
+      observer.observe(mapContainer);
+    });
+  </script>
+</body>
+</html>
