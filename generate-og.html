@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>Generate OG Image</title></head>
+<body>
+<canvas id="c" width="1200" height="630"></canvas>
+<p><a id="download" download="og-image.png">Click here to download og-image.png</a></p>
+<script>
+const c = document.getElementById('c');
+const ctx = c.getContext('2d');
+
+// Background
+ctx.fillStyle = '#F5F0EB';
+ctx.fillRect(0, 0, 1200, 630);
+
+// Blob accent (top right)
+ctx.save();
+ctx.translate(900, -20);
+ctx.scale(1.4, 1.4);
+ctx.beginPath();
+ctx.moveTo(180, 30);
+ctx.bezierCurveTo(240, 45, 280, 100, 275, 170);
+ctx.bezierCurveTo(270, 240, 220, 300, 155, 315);
+ctx.bezierCurveTo(90, 330, 40, 300, 25, 230);
+ctx.bezierCurveTo(10, 160, 15, 110, 55, 70);
+ctx.bezierCurveTo(95, 30, 120, 15, 180, 30);
+ctx.closePath();
+ctx.strokeStyle = 'rgba(139, 105, 20, 0.12)';
+ctx.lineWidth = 1.5;
+ctx.stroke();
+ctx.restore();
+
+// Blob accent (bottom left)
+ctx.save();
+ctx.translate(-60, 320);
+ctx.scale(1.2, 1.2);
+ctx.beginPath();
+ctx.moveTo(140, 20);
+ctx.bezierCurveTo(190, 32, 225, 80, 220, 140);
+ctx.bezierCurveTo(215, 200, 175, 250, 120, 265);
+ctx.bezierCurveTo(65, 280, 15, 255, 10, 195);
+ctx.bezierCurveTo(5, 135, 5, 95, 40, 60);
+ctx.bezierCurveTo(75, 25, 90, 8, 140, 20);
+ctx.closePath();
+ctx.strokeStyle = 'rgba(139, 105, 20, 0.12)';
+ctx.lineWidth = 1.2;
+ctx.stroke();
+ctx.restore();
+
+// Title
+ctx.textAlign = 'center';
+ctx.textBaseline = 'middle';
+ctx.fillStyle = '#8B6914';
+ctx.font = '400 82px Georgia, serif';
+ctx.fillText('Hairdresser Su', 600, 260);
+
+// Tagline
+ctx.fillStyle = '#8A7656';
+ctx.font = '500 17px sans-serif';
+ctx.letterSpacing = '3px';
+ctx.fillText('HAIR SALON IN MELBOURNE CBD', 600, 330);
+
+// Divider
+ctx.fillStyle = 'rgba(139, 105, 20, 0.35)';
+ctx.fillRect(570, 365, 60, 1.5);
+
+// Services
+ctx.fillStyle = '#8A7656';
+ctx.font = '400 20px Georgia, serif';
+ctx.fillText('Cut  \u00B7  Colour  \u00B7  Perm  \u00B7  Straightening  \u00B7  Treatment', 600, 400);
+
+// Download link
+document.getElementById('download').href = c.toDataURL('image/png');
+</script>
+</body>
+</html>
